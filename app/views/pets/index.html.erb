@@ -1,14 +1,12 @@
-<h1 class="text-center"> My Articles Site </h1>
-<ul class="list-group">
-  <% @articles.each do |article| %>
-    <li class="list-group-item d-flex justify-content-between">
-      <div class="article">
-      <%= link_to article.title, article_path(article), class:"text-decoration-none form-check-label" %>
-      </div>
+<h1> Reported Pets </h1>
 
-    </li>
-  <% end %>
+<ul>
+  <%@pets.each do |pet|%>
+    <li><%= pet.name %></li>
+    <li><%= pet.species%></li>
+    <li><%= pet.address %></li>
+    <li><%= pet.found_on %></li>
+  <%end%>
 </ul>
-<div class="btn-wrapper text-center">
-<%= link_to "Add article", new_article_path, class: "btn btn-primary mt-3 text-center"%>
-</div>
+
+<%= link_to "Report a new pet", new_pet_path %>
