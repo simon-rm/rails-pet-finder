@@ -1,0 +1,16 @@
+<div class="d-flex justify-content-between align-items-center">
+<h1 class="display-4 text-break"><%= @article.title %></h1>
+<%#q: how can I add tags inside a link_to?%>
+<%= link_to article_path(@article), data: {turbo_method: :delete}, class: "btn btn-danger me-3" do %>
+<i class="fa fa-trash" aria-hidden="true"></i>
+<%end%>
+
+<%= link_to edit_article_path(@article), class: "btn btn-outline-secondary" do %>
+<i class="fa fa-pencil" aria-hidden="true"></i>
+<%end%>
+</div>
+<p class="lead text-break"><%= @article.content %></p>
+
+<div class="text-center mt-4">
+<%= link_to "Back to articles", articles_path, class: "btn btn-outline-secondary" %>
+</div>

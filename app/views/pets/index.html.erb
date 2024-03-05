@@ -1,0 +1,14 @@
+<h1 class="text-center"> My Articles Site </h1>
+<ul class="list-group">
+  <% @articles.each do |article| %>
+    <li class="list-group-item d-flex justify-content-between">
+      <div class="article">
+      <%= link_to article.title, article_path(article), class:"text-decoration-none form-check-label" %>
+      </div>
+
+    </li>
+  <% end %>
+</ul>
+<div class="btn-wrapper text-center">
+<%= link_to "Add article", new_article_path, class: "btn btn-primary mt-3 text-center"%>
+</div>
